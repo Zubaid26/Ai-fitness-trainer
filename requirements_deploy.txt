@@ -1,0 +1,17 @@
+# --- Core ---
+streamlit>=1.37.0
+ultralytics==8.3.203
+
+# Use headless OpenCV on Linux (Streamlit Cloud) to avoid libGL issues,
+# but allow normal OpenCV on Windows for local dev with GUI if desired.
+opencv-python-headless==4.12.0.88; sys_platform != "win32"
+opencv-python==4.12.0.88; sys_platform == "win32"
+
+numpy>=1.24
+
+# Deep learning backend (CPU wheels are fine on Streamlit Cloud)
+torch
+
+# Video writing helpers (recommended)
+imageio-ffmpeg>=0.4.9
+av>=12.3.0
